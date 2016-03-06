@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+
+  "name": "Matvän",
+  "description": "Din personlige shoppingassistent för hälsosammare handling hos Mathem.",
+  "version": "1.0.0",
+
+  "icons": {
+    "64": "images/icon.png"
+  },
+
+  "permissions": [
+     "*://www.mathem.se/*"
+   ],
+   "web_accessible_resources": [
+     "css/matvan.css"
+   ],
+   "content_scripts": [
+     {
+       "matches": [
+         "*://www.mathem.se/*"
+       ],
+       "css": [
+         "css/matvan.css"
+       ]
+     },
+     {
+       "matches": [
+         "*://www.mathem.se/*"
+       ],
+       "js": [
+         "js/jquery.min.js",
+         "js/matvan.js"
+       ]
+     }
+   ]
+}
