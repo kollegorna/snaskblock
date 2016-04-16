@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Matvän",
-  "description": "Din personlige shoppingassistent för hälsosammare handling hos Mathem.",
+  "name": "Snaskblock",
+  "description": "Håller dina fingrar borta från snasket…",
   "version": "1.0.0",
 
   "icons": {
@@ -10,27 +10,36 @@
   },
 
   "permissions": [
-     "*://www.mathem.se/*"
-   ],
-   "web_accessible_resources": [
-     "css/matvan.css"
+     "*://www.mathem.se/*",
+     "*://www.coop.se/*",
+     "*://www.mat.se/*"
    ],
    "content_scripts": [
      {
        "matches": [
          "*://www.mathem.se/*"
        ],
-       "css": [
-         "css/matvan.css"
+       "js": [
+         "js/jquery.min.js",
+         "js/mathem.js"
        ]
      },
      {
        "matches": [
-         "*://www.mathem.se/*"
+         "*://www.coop.se/*"
        ],
        "js": [
          "js/jquery.min.js",
-         "js/matvan.js"
+         "js/coop.js"
+       ]
+     },
+     {
+       "matches": [
+         "*://www.mat.se/*"
+       ],
+       "js": [
+         "js/jquery.min.js",
+         "js/mat.js"
        ]
      }
    ]
