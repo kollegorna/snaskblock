@@ -15,6 +15,7 @@
       this.Navigation();
       this.Products();
       this.Pages();
+      this.Cart();
 
     },
 
@@ -124,7 +125,27 @@
     },
 
     Cart: function() {
+      if (window.location.href.includes('/kassan')) {
+        var alarm = false;
 
+        $('.prodRow').each(function( index ) {
+          var product = $(this);
+          var product_url = $('.prodTitle', $(this)).attr('href');
+
+          if (typeof product_url === 'string') {
+            $.each(Mathem.Snask(), function(i, val) {
+              if (product_url.includes(val)) {
+                if (alarm == false) {
+                  Mathem.SoundAlarm();
+                  alarm = true;
+                }
+
+                product.addClass('cart-snask');
+              }
+            });
+          }
+        });
+      }
     }
 
   }

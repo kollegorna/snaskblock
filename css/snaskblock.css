@@ -25,3 +25,22 @@
   50% {background: rgba(255, 0, 0, 0.6);}
   100% {background: rgba(255, 0, 0, 0.3);}
 }
+
+
+.cart-snask {
+  background: rgba(255, 0, 0, 0.3) !important;
+}
+
+.cart-snask .removeIcon {
+  -webkit-animation: snaskblock-remove-icon 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  font-size: 24px !important;
+  height: 30px !important;
+  width: 30px !important;
+}
+
+@-webkit-keyframes snaskblock-remove-icon {
+  0% {-webkit-transform: scale(0.8, 0.8);}
+  50% {-webkit-transform: scale(1.2, 1.2);}
+  100% {-webkit-transform: scale(0.8, 0.8);}
+}
