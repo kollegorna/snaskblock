@@ -1,9 +1,5 @@
 /**
- *
- * Matvän
- * Din personlige shoppingassistent för hälsosammare handling hos Mathem.
- * Per Sandström per@kollegorna.se
- *
+ * Snaskblock for Mathem
  */
 
 (function($) {
@@ -61,15 +57,13 @@
     },
 
     BlockProducts: function() {
-      var blocked_urls = Mathem.Snask();
-
       $('.product.prod-info:not(.snaskblock)').each(function( index ) {
         var product = $(this);
         var product_url = $('.prodImg a', $(this)).attr('href');
         $(this).addClass('snaskblock');
 
         if (typeof product_url === 'string') {
-          $.each( blocked_urls, function( i, val ) {
+          $.each(Mathem.Snask(), function(i, val) {
             if (product_url.includes(val)) {
               product.remove();
             }
@@ -79,14 +73,12 @@
     },
 
     BlockNavigation: function() {
-      var blocked_urls = Mathem.Snask();
-
       $('ul.navigation li, .megaContainer ul li').each(function( index ) {
         var nav = $(this);
         var nav_url = $('a', $(this)).attr('href');
 
         if (typeof nav_url === 'string') {
-          $.each( blocked_urls, function( i, val ) {
+          $.each(Mathem.Snask(), function(i, val) {
             if (nav_url.includes(val)) {
               nav.remove();
             }
