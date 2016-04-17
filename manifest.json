@@ -4,23 +4,37 @@
   "name": "Snaskblock",
   "description": "Håller dina fingrar borta från snasket…",
   "version": "1.0.0",
-
   "icons": {
     "64": "images/icon.png"
   },
-
+  "web_accessible_resources": [
+    "audio/warning.wav"
+  ],
   "permissions": [
      "*://www.mathem.se/*",
      "*://www.coop.se/*",
      "*://www.mat.se/*"
    ],
    "content_scripts": [
+      {
+       "matches": [
+         "*://www.mathem.se/*",
+         "*://www.coop.se/*",
+         "*://www.mat.se/*"
+       ],
+       "js": [
+         "js/jquery.min.js",
+         "js/snaskblock.js"
+       ],
+       "css": [
+         "css/snaskblock.css"
+       ]
+     },
      {
        "matches": [
          "*://www.mathem.se/*"
        ],
        "js": [
-         "js/jquery.min.js",
          "js/mathem.js"
        ]
      },
@@ -29,7 +43,6 @@
          "*://www.coop.se/*"
        ],
        "js": [
-         "js/jquery.min.js",
          "js/coop.js"
        ]
      },
@@ -38,7 +51,6 @@
          "*://www.mat.se/*"
        ],
        "js": [
-         "js/jquery.min.js",
          "js/mat.js"
        ]
      }
