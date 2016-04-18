@@ -9,3 +9,36 @@
   height: 30px !important;
   width: 30px !important;
 }
+
+.alarm-sounding .cartPage .saveButton {
+  cursor: not-allowed !important;
+}
+
+.alarm-sounding.snaskblock-clicker-complete .cartPage .saveButton {
+  cursor: pointer !important;
+}
+
+.snaskblock-challenge {
+  background: #d31145;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1.4;
+  margin-top: 20px;
+  padding: 16px;
+  text-align: center;
+}
+
+.snaskblock-challenge strong {
+  display: block;
+  padding-top: 8px;
+}
+
+.snaskblock-clicker {
+  cursor: pointer;
+  display: block;
+}
+
+.snaskblock-clicker-ok {
+  display: none;
+}

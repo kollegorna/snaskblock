@@ -144,6 +144,11 @@
             if (product_url.includes(val)) {
               bad_products++;
 
+              if ($('.snaskblock-clicker').length < 1) {
+                $('#shoppingCartList').append('<div class="snaskblock-challenge snaskblock-clicker">Du har snask i varukorgen! Klicka här 1000 gånger för att kunna slutföra din order.<strong><span>0</span> av 1000 klick gjorda</div>');
+                $('.saveButton').attr('disabled', 'disabled');
+              }
+
               if (alarm == false) {
                 Mathem.SoundAlarm();
                 alarm = true;
@@ -157,12 +162,31 @@
 
       if (bad_products < 1) {
         Mathem.TurnOffAlarm();
+        $('.saveButton').removeAttr('disabled');
+        $('.snaskblock-clicker').remove();
       }
     },
 
     Cart: function() {
       if (window.location.href.includes('/kassan')) {
         setInterval(function(){ Mathem.CartLoop(); }, 500);
+
+        var clicks = 0;
+        $(document).on('click', '.snaskblock-clicker', function() {
+          clicks++;
+
+          $('span', $(this)).html(clicks);
+
+          if (clicks > 999 && $('.snaskblock-clicker-ok').length < 1) {
+            $('#shoppingCartList').append('<div class="snaskblock-challenge snaskblock-clicker-ok">Genom att klicka 1000 gånger så brände du åtminstone 1400 kalorier. Men känn dig inte nöjd för det.<br>Jaja, nu får du väl köpa ditt snask då…</div>');
+
+            $('.snaskblock-clicker').slideUp("medium", function() {
+              $('.snaskblock-clicker-ok').slideDown('medium');
+              $('body').addClass('snaskblock-clicker-complete');
+              $('.saveButton').removeAttr('disabled');
+            });
+          }
+        });
       }
     }
 
