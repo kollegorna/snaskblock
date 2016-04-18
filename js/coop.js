@@ -99,7 +99,7 @@
       }
 
       $('body').addClass('alarm-sounding');
-      $('body').prepend('<div class="snaskblock-warning" style="height: ' + $( document ).height() + 'px"><audio controls="controls" autoplay="autoplay" loop="true"><source src="' + chrome.extension.getURL('audio/warning.wav') + '" type="audio/mpeg"></audio></div>');
+      $('body').prepend('<div class="snaskblock-warning" style="height: ' + $( document ).height() + 'px"><!--<audio controls="controls" autoplay="autoplay" loop="true"><source src="' + chrome.extension.getURL('audio/warning.wav') + '" type="audio/mpeg"></audio>--></div>');
     },
 
     TurnOffAlarm: function() {
@@ -162,6 +162,11 @@
             if (product_url.includes(val)) {
               bad_products++;
 
+              if ($('.snaskblock-clicker').length < 1) {
+                $('.Cart-footer').prepend('<div class="snaskblock-challenge snaskblock-clicker">Du har snask i varukorgen! Klicka här 1000 gånger för att kunna slutföra din order.<strong><span>0</span> av 1000 klick gjorda</div>');
+                $('button.FlatButton--green').attr('disabled', 'disabled');
+              }
+
               if (alarm == false) {
                 Coop.SoundAlarm();
                 alarm = true;
@@ -175,11 +180,32 @@
 
       if (bad_products < 1) {
         Coop.TurnOffAlarm();
+        $('.snaskblock-clicker').remove();
+        $('button.FlatButton--green').removeAttr('disabled');
       }
     },
 
     Cart: function() {
-      setInterval(function(){ Coop.CartLoop(); }, 500);
+      if (window.location.href.includes('handla-online/varukorg')) {
+        setInterval(function(){ Coop.CartLoop(); }, 500);
+
+        var clicks = 0;
+        $(document).on('click', '.snaskblock-clicker', function() {
+          clicks++;
+
+          $('span', $(this)).html(clicks);
+
+          if (clicks > 10 && $('.snaskblock-clicker-ok').length < 1) {
+            $('.Cart-footer').prepend('<div class="snaskblock-challenge snaskblock-clicker-ok">Genom att klicka 1000 gånger så brände du åtminstone 1400 kalorier. Men känn dig inte nöjd för det.<br>Jaja, nu får du väl köpa ditt snask då…</div>');
+
+            $('.snaskblock-clicker').slideUp("medium", function() {
+              $('.snaskblock-clicker-ok').slideDown('medium');
+              $('body').addClass('snaskblock-clicker-complete');
+              $('button.FlatButton--green').removeAttr('disabled');
+            });
+          }
+        });
+      }
     }
 
   }
