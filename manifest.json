@@ -12,15 +12,13 @@
   ],
   "permissions": [
      "*://www.mathem.se/*",
-     "*://www.coop.se/*",
-     "*://www.mat.se/*"
+     "*://www.coop.se/*"
    ],
    "content_scripts": [
       {
        "matches": [
          "*://www.mathem.se/*",
-         "*://www.coop.se/*",
-         "*://www.mat.se/*"
+         "*://www.coop.se/*"
        ],
        "js": [
          "js/jquery.min.js",
@@ -36,6 +34,9 @@
        ],
        "js": [
          "js/mathem.js"
+       ],
+       "css": [
+         "css/mathem.css"
        ]
      },
      {
@@ -44,14 +45,9 @@
        ],
        "js": [
          "js/coop.js"
-       ]
-     },
-     {
-       "matches": [
-         "*://www.mat.se/*"
        ],
-       "js": [
-         "js/mat.js"
+       "css": [
+         "css/coop.css"
        ]
      }
    ]
