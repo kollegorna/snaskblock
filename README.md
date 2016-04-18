@@ -10,7 +10,9 @@ Here's an image of one of us after using Snaskblock for just one week.
 
 ![stor snubbe](https://gimmebar-assets.s3.amazonaws.com/5140908c61b42.gif)
 
-This is how you roll a shopping cart. This will be you.
+This is how you roll a shopping cart. This will be you if you use Snaskblock.
+
+[Get it NOW from the Chrome Web Store](#)
 
 ## Credits
 
