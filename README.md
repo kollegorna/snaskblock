@@ -12,7 +12,7 @@ Here's an image of one of us after using Snaskblock for just one week.
 
 This is how you roll a shopping cart. This will be you if you use Snaskblock.
 
-[Get it NOW from the Chrome Web Store](#)
+[Get it NOW from the Chrome Web Store](#) (pants not included)
 
 ## Credits
 
