@@ -22,6 +22,7 @@
         "varor/amerikansk-lask",
         "varor/bullar",
         "varor/chips",
+        "varor/chokladkaka-ljus",
         "varor/chokladpraliner",
         "varor/chokladstycksaker",
         "varor/cider",
@@ -88,7 +89,21 @@
     },
 
     SoundAlarm: function() {
+      if ($('body').hasClass('alarm-sounding')) {
+        return false;
+      }
+
+      $('body').addClass('alarm-sounding');
       $('body').prepend('<div class="snaskblock-warning" style="height: ' + $( document ).height() + 'px"><audio controls="controls" autoplay="autoplay" loop="true"><source src="' + chrome.extension.getURL('audio/warning.wav') + '" type="audio/mpeg"></audio></div>');
+    },
+
+    TurnOffAlarm: function() {
+      if (!$('body').hasClass('alarm-sounding')) {
+        return false;
+      }
+
+      $('.snaskblock-warning').remove();
+      $('body').removeClass('alarm-sounding');
     },
 
     Navigation: function() {
@@ -116,27 +131,38 @@
       });
     },
 
+    CartLoop: function() {
+      var alarm = false;
+      var bad_products = 0;
+
+      $('.prodRow').each(function( index ) {
+        var product = $(this);
+        var product_url = $('.prodTitle', $(this)).attr('href');
+
+        if (typeof product_url === 'string') {
+          $.each(Mathem.Snask(), function(i, val) {
+            if (product_url.includes(val)) {
+              bad_products++;
+
+              if (alarm == false) {
+                Mathem.SoundAlarm();
+                alarm = true;
+              }
+
+              product.addClass('cart-snask');
+            }
+          });
+        }
+      });
+
+      if (bad_products < 1) {
+        Mathem.TurnOffAlarm();
+      }
+    },
+
     Cart: function() {
       if (window.location.href.includes('/kassan')) {
-        var alarm = false;
-
-        $('.prodRow').each(function( index ) {
-          var product = $(this);
-          var product_url = $('.prodTitle', $(this)).attr('href');
-
-          if (typeof product_url === 'string') {
-            $.each(Mathem.Snask(), function(i, val) {
-              if (product_url.includes(val)) {
-                if (alarm == false) {
-                  Mathem.SoundAlarm();
-                  alarm = true;
-                }
-
-                product.addClass('cart-snask');
-              }
-            });
-          }
-        });
+        setInterval(function(){ Mathem.CartLoop(); }, 500);
       }
     }
 
