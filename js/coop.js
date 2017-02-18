@@ -22,12 +22,14 @@
 
     Snask: function() {
       return arr = [
+        "brod/fika",
         "dryck/energi/energidryck",
         "dryck/ol-cider-vin",
         "dryck/vatten-lask/stor-lask",
         "dryck/vatten-lask/liten-lask",
         "dryck/vatten-lask/light-lask",
         "dryck/vatten-lask/pa-back",
+        "fika/fikabrod",
         "frys/brod-dessert/fikabrod",
         "frys/glass-frukt-bar/paketglass",
         "frys/glass-frukt-bar/familjepack",
@@ -47,6 +49,7 @@
       return arr = [
         "Energidryck",
         "Familjepack",
+        "Fika",
         "Fikabröd",
         "Godis",
         "Laktosfritt Frys",
