@@ -44,6 +44,7 @@
         "varor/mazariner",
         "varor/muffins",
         "varor/ol",
+        "varor/ostbagar",
         "varor/pizza",
         "varor/presentchoklad",
         "varor/rawfood-glass",
