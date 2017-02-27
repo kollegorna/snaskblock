@@ -196,7 +196,7 @@
 
           $('span', $(this)).html(clicks);
 
-          if (clicks > 999 && $('.snaskblock-clicker-ok').length < 1) {
+          if (clicks > 1000 && $('.snaskblock-clicker-ok').length < 1) {
             $('#shoppingCartList').append('<div class="snaskblock-challenge snaskblock-clicker-ok">Genom att klicka 1000 gånger så brände du åtminstone 1400 kalorier. Men känn dig inte nöjd för det.<br>Jaja, nu får du väl köpa ditt snask då…</div>');
 
             $('.snaskblock-clicker').slideUp("medium", function() {
