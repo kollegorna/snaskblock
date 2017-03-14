@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Snaskblock",
-  "description": "Håller dina fingrar borta från snasket…",
+  "name": "SnaskBlock",
+  "description": "Plockar automatiskt bort snasket från MatHem och Coop.",
   "version": "1.0.0",
   "icons": {
     "64": "images/icon.png"
