@@ -7,8 +7,8 @@
 }
 
 .cart-snask .Cart-rowDeleteButton {
-  -webkit-animation: snaskblock-remove-icon 1s ease-out;
-  -webkit-animation-iteration-count: infinite;
+  animation: snaskblock-remove-icon 1s ease-out;
+  animation-iteration-count: infinite;
 }
 
 

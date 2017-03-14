@@ -1,6 +1,5 @@
 .snaskblock-warning {
   animation: snaskblock-warning-colorchange 1s infinite;
-  -webkit-animation: snaskblock-warning-colorchange 1s infinite;
   bottom: 0;
   left: 0;
   position: absolute;
@@ -15,19 +14,13 @@
 }
 
 @keyframes snaskblock-warning-colorchange {
-  0%   {background: rgba(255, 0, 0, 0.3);}
-  50% {background: rgba(255, 0, 0, 0.6);}
-  100% {background: rgba(255, 0, 0, 0.3);}
+  0%    {background: rgba(255, 0, 0, 0.3);}
+  50%   {background: rgba(255, 0, 0, 0.6);}
+  100%  {background: rgba(255, 0, 0, 0.3);}
 }
 
-@-webkit-keyframes snaskblock-warning-colorchange {
-  0%   {background: rgba(255, 0, 0, 0.3);}
-  50% {background: rgba(255, 0, 0, 0.6);}
-  100% {background: rgba(255, 0, 0, 0.3);}
-}
-
-@-webkit-keyframes snaskblock-remove-icon {
-  0% {-webkit-transform: scale(0.8, 0.8);}
-  50% {-webkit-transform: scale(1.2, 1.2);}
-  100% {-webkit-transform: scale(0.8, 0.8);}
+@keyframes snaskblock-remove-icon {
+  0%    {transform: scale(0.8, 0.8);}
+  50%   {transform: scale(1.2, 1.2);}
+  100%  {transform: scale(0.8, 0.8);}
 }

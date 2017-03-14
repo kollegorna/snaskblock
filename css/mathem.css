@@ -3,8 +3,8 @@
 }
 
 .cart-snask .removeIcon {
-  -webkit-animation: snaskblock-remove-icon 1s ease-out;
-  -webkit-animation-iteration-count: infinite;
+  animation: snaskblock-remove-icon 1s ease-out;
+  animation-iteration-count: infinite;
   font-size: 24px !important;
   height: 30px !important;
   width: 30px !important;
