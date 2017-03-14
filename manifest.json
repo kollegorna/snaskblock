@@ -5,7 +5,7 @@
   "description": "Plockar automatiskt bort snasket från MatHem och Coop.",
   "version": "1.0.0",
   "icons": {
-    "64": "images/icon.png"
+    "128": "images/icon.png"
   },
   "web_accessible_resources": [
     "audio/warning.wav"
