@@ -6,7 +6,7 @@ Then the SnaskBlock extension for Chrome is your best friend! It effectively rem
 
 Should you struggle through the alarm you still have to click your mouse 1000 times ([because clicks burns calories you know](http://techcrunch.com/2013/03/11/someone-calculated-how-many-calories-a-mouse-click-burns/)) before being able to complete your order.
 
-[Get it NOW from the Chrome Web Store](#)
+[Get it NOW from the Chrome Web Store](https://chrome.google.com/webstore/detail/snaskblock/klngbijeeahanjphhhiejhmcceckhimd)
 
 [Homepage](https://snaskblock.se)
 
